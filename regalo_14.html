@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para vos, mi niña 💕</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  font-family:'Segoe UI', sans-serif;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background: linear-gradient(180deg, #fde2e4, #fadadd);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+
+/* ====== PARTICULAS ====== */
+.particles span{
+  position:absolute;
+  bottom:-30px;
+  font-size:22px;
+  animation:float 9s linear infinite;
+  opacity:0.7;
+  pointer-events:none;
+}
+
+@keyframes float{
+  0%{transform:translateY(0) scale(0.8); opacity:0;}
+  20%{opacity:0.8;}
+  100%{transform:translateY(-110vh) scale(1.3); opacity:0;}
+}
+
+/* ====== CARD ====== */
+.card{
+  background:rgba(255,255,255,0.97);
+  width:92%;
+  max-width:390px;
+  padding:26px;
+  border-radius:30px;
+  box-shadow:0 20px 40px rgba(255,105,135,0.35);
+  animation:fadeIn 1s ease;
+  z-index:2;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(25px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+h1{
+  color:#ff4d6d;
+  font-size:1.6rem;
+  margin-bottom:14px;
+  text-align:center;
+}
+
+#text{
+  color:#555;
+  font-size:0.95rem;
+  line-height:1.6;
+  white-space:pre-wrap;
+}
+
+button{
+  width:100%;
+  margin-top:22px;
+  padding:14px;
+  border:none;
+  border-radius:40px;
+  background:linear-gradient(135deg,#ff4d6d,#ff8fab);
+  color:white;
+  font-size:1rem;
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(255,77,109,0.45);
+}
+
+/* ====== FINAL ====== */
+.final{
+  animation:finalGlow 1.5s ease forwards;
+}
+
+@keyframes finalGlow{
+  0%{box-shadow:0 0 0 rgba(255,77,109,0);}
+  100%{box-shadow:0 0 45px rgba(255,77,109,0.8);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="card">
+  <h1>Mi niña 💕</h1>
+  <button onclick="start()">Abrir mi regalo 🎁</button>
+</div>
+
+<div class="particles" id="particles"></div>
+
+<audio id="music" loop playsinline>
+  <source src="sweet.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+/* ===== TEXTO EXACTO ===== */
+const fullText = `ola mi niña solo quería que supieras lo mucho que te amo mi vida y que eres alguien muy especial en mi vida, alguien en el que pienso desde que me levanto, hasta que me acuesto.
+
+Realmente no se que me hiciste mi amor pero me gusta, me gusta pensar en ti, en pensar que haces o pensar en lo mucho que te amo, no sabia que necesitaba de ti hasta que llegaste mi niña,
+
+creo que me estoy yendo de tema pero esta quería que fuese algo distinta, quizás más yo? o no se mi amor,
+
+pero lo que si se amor es que te amo mucho y que ojala pasemos un lindo 14 mi monita, el primero de muchos que vamos a pasar juntos y ojalá el próximo lo podamos pasar estando juntos haciendo muchas cosas juntos, siendo solo tu y yo, siendo felices que creo que es lo que más queremos ambos mi vida.
+
+Te amo mucho mi monita, mi cachetoncita anhelo que llegue diciembre solo para poder verte, y ver los ojos del amor de mi vida, los ojos que que quiero ver al levantarme todas las mañana.
+
+Pero realmente quiero que estos meses pasen lento y a la vez no mi amor, solo por el hecho de que quiero vivir cada momento junto a ti y que cada momento sea único y recordarlo siempre mi niña :3.
+
+Te amo mucho mi niña hermosa, mi cachetona, mi monita. Mi enojona la uníca enojona que quiero tener siempre en mi vida.
+
+Feliz 14 mi bebé, el primero de muchos que vamos a pasar, y a pesar de la distancia mi vida va a ser un gran día tenlo x seguro espero te guste esta carta, intente que fuera un poco diferente.
+
+Algún día podré darte cartas echas a mano, y no creo que falte mucho para eso, pero bueño mi vida te amo mucho.
+
+Firma:
+Tu niño <3`;
+
+let index = 0;
+
+/* ===== START ===== */
+function start(){
+  const audio = document.getElementById("music");
+  audio.volume = 0.8;
+  audio.play();
+
+  const card = document.getElementById("card");
+  card.innerHTML = `<h1>Feliz 14 mi bebé 💖</h1><div id="text"></div>`;
+  typeWriter();
+}
+
+/* ===== TEXTO DE A POCO ===== */
+function typeWriter(){
+  const textDiv = document.getElementById("text");
+  if(index < fullText.length){
+    textDiv.innerHTML += fullText.charAt(index);
+    index++;
+    setTimeout(typeWriter, 28);
+  } else {
+    finish();
+  }
+}
+
+/* ===== FINAL ===== */
+function finish(){
+  document.getElementById("card").classList.add("final");
+}
+
+/* ===== LAZOS FLOTANDO ===== */
+const emojis = ["🎀","💝","💞"];
+
+function createParticle(){
+  const p = document.createElement("span");
+  p.innerHTML = emojis[Math.floor(Math.random()*emojis.length)];
+  p.style.left = Math.random()*100 + "%";
+  p.style.animationDuration = (Math.random()*4 + 6) + "s";
+  document.getElementById("particles").appendChild(p);
+
+  setTimeout(()=>p.remove(),10000);
+}
+
+setInterval(createParticle, 400);
+</script>
+
+</body>
+</html>
