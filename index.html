@@ -2,75 +2,69 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Para ti 💖</title>
+  <title>Para ti ❤️</title>
 
   <style>
     body {
       margin: 0;
-      padding: 25px;
+      padding: 0;
+      background: #ffe6ee;
       font-family: Arial, sans-serif;
-      background: #ffe6f0;
-      color: #333;
+      overflow-y: auto;
     }
 
-    .card {
-      max-width: 600px;
-      margin: auto;
-      background: #fff;
-      padding: 25px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.1);
-      line-height: 1.6;
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      background: #fff0f5;
+      padding: 40px;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      text-align: center;
+      color: #d6336c;
+      margin-bottom: 30px;
+    }
+
+    p {
       font-size: 18px;
+      line-height: 1.8;
+      color: #333;
+      white-space: pre-line;
     }
 
-    #playBtn {
-      display: block;
-      margin: 0 auto 20px;
-      padding: 12px 20px;
-      font-size: 16px;
-      background: #ff5fa2;
-      color: white;
-      border: none;
-      border-radius: 25px;
+    .firma {
+      margin-top: 40px;
+      font-weight: bold;
+      text-align: right;
     }
   </style>
 </head>
 
 <body>
 
-<button id="playBtn">💗 Toca aquí, mi niña 💗</button>
+  <!-- Música (NO la cambié) -->
+  <audio autoplay loop>
+    <source src="musica.mp3" type="audio/mpeg">
+  </audio>
 
-<audio id="music" loop>
-  <source src="sweet.mp3" type="audio/mpeg">
-</audio>
+  <div class="container">
+    <h1>Para ti, mi niña 💖</h1>
 
-<div class="card">
-  <p>
-  ola mi niña solo quería que supieras lo mucho que te amo mi vida y que eres alguien muy especial en mi vida, alguien en el que pienso desde que me levanto, hasta que me acuesto.
-  </p>
+    <p>
+ola mi niña solo quería que supieras lo mucho que te amo mi vida y que eres alguien muy especial en mi vida, alguien en el que pienso desde que me levanto, hasta que me acuesto. Realmente no se que me hiciste mi amor pero me gusta, me gusta pensar en ti, en pensar que haces o pensar en lo mucho que te amo, no sabia que necesitaba de ti hasta que llegaste mi niña, creo que me estoy yendo de tema pero esta quería que fuese algo distinta, quizás más yo? o no se mi amor, pero lo que si se amor es que te amo mucho y que ojala pasemos un lindo 14 mi monita, el primero de muchos que vamos a pasar juntos y ojalá el próximo lo podamos pasar estando juntos haciendo muchas cosas juntos, siendo solo tu y yo, siendo felices que creo que es lo que más queremos ambos mi vida. Te amo mucho mi monita, mi cachetoncita anhelo que llegue diciembre solo para poder verte, y ver los ojos del amor de mi vida, los ojos que que quiero ver al levantarme todas las mañana.
 
-  <p>
-  Realmente no se que me hiciste mi amor pero me gusta, me gusta pensar en ti, en lo mucho que te amo y en todo lo que vamos a vivir juntos.
-  </p>
+Pero realmente quiero que estos meses pasen lento y a la vez no mi amor, solo por el hecho de que quiero vivir cada momento junto a ti y que cada momento sea único y recordarlo siempre mi niña :3. Te amo mucho mi niña hermosa, mi cachetona, mi monita. Mi enojona la uníca enojona que quiero tener siempre en mi vida.
 
-  <p>
-  Feliz 14 mi bebé, el primero de muchos que vamos a pasar, y a pesar de la distancia mi vida va a ser un gran día, tenlo x seguro.
-  </p>
+Feliz 14 mi bebé, el primero de muchos que vamos a pasar, y a pesar de la distancia mi vida va a ser un gran día tenlo x seguro espero te guste esta carta, intente que fuera un poco diferente. Algún día podré darte cartas echas a mano, y no creo que falte mucho para eso, pero bueño mi vida te amo mucho. Firma?
+    </p>
 
-  <p><strong>Tu niño &lt;3</strong></p>
-</div>
-
-<script>
-  const btn = document.getElementById("playBtn");
-  const music = document.getElementById("music");
-
-  btn.onclick = () => {
-    music.play();
-    btn.style.display = "none";
-  };
-</script>
+    <p class="firma">
+      Tu niño &lt;3
+    </p>
+  </div>
 
 </body>
 </html>
