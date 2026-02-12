@@ -3,23 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <title>Para ti ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
       margin: 0;
-      padding: 0;
-      background: #ffe6ee;
       font-family: Arial, sans-serif;
-      overflow-y: auto;
+      background: linear-gradient(180deg, #ffe6ee, #ffd1e3);
+      overflow-x: hidden;
+      animation: fadeIn 2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     .container {
       max-width: 900px;
-      margin: 50px auto;
+      margin: 60px auto;
       background: #fff0f5;
       padding: 40px;
-      border-radius: 18px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
     }
 
     h1 {
@@ -40,31 +46,88 @@
       font-weight: bold;
       text-align: right;
     }
+
+    /* Botón música */
+    #playBtn {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ff5fa2;
+      color: white;
+      border: none;
+      padding: 12px 22px;
+      font-size: 16px;
+      border-radius: 30px;
+      z-index: 9999;
+    }
+
+    /* Corazones con lazos */
+    .heart {
+      position: fixed;
+      top: -20px;
+      font-size: 24px;
+      animation: fall linear forwards;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- Música (NO la cambié) -->
-  <audio autoplay loop>
-    <source src="musica.mp3" type="audio/mpeg">
-  </audio>
+<button id="playBtn">💗 Toca aquí, mi niña 💗</button>
 
-  <div class="container">
-    <h1>Para ti, mi niña 💖</h1>
+<audio id="music" loop>
+  <source src="sweet.mp3" type="audio/mpeg">
+</audio>
 
-    <p>
+<div class="container">
+  <h1>Para ti, mi niña 💖</h1>
+
+  <p>
 ola mi niña solo quería que supieras lo mucho que te amo mi vida y que eres alguien muy especial en mi vida, alguien en el que pienso desde que me levanto, hasta que me acuesto. Realmente no se que me hiciste mi amor pero me gusta, me gusta pensar en ti, en pensar que haces o pensar en lo mucho que te amo, no sabia que necesitaba de ti hasta que llegaste mi niña, creo que me estoy yendo de tema pero esta quería que fuese algo distinta, quizás más yo? o no se mi amor, pero lo que si se amor es que te amo mucho y que ojala pasemos un lindo 14 mi monita, el primero de muchos que vamos a pasar juntos y ojalá el próximo lo podamos pasar estando juntos haciendo muchas cosas juntos, siendo solo tu y yo, siendo felices que creo que es lo que más queremos ambos mi vida. Te amo mucho mi monita, mi cachetoncita anhelo que llegue diciembre solo para poder verte, y ver los ojos del amor de mi vida, los ojos que que quiero ver al levantarme todas las mañana.
 
 Pero realmente quiero que estos meses pasen lento y a la vez no mi amor, solo por el hecho de que quiero vivir cada momento junto a ti y que cada momento sea único y recordarlo siempre mi niña :3. Te amo mucho mi niña hermosa, mi cachetona, mi monita. Mi enojona la uníca enojona que quiero tener siempre en mi vida.
 
 Feliz 14 mi bebé, el primero de muchos que vamos a pasar, y a pesar de la distancia mi vida va a ser un gran día tenlo x seguro espero te guste esta carta, intente que fuera un poco diferente. Algún día podré darte cartas echas a mano, y no creo que falte mucho para eso, pero bueño mi vida te amo mucho. Firma?
-    </p>
+  </p>
 
-    <p class="firma">
-      Tu niño &lt;3
-    </p>
-  </div>
+  <p class="firma">
+    Tu niño &lt;3
+  </p>
+</div>
+
+<script>
+  // Música (necesita toque en celular)
+  const btn = document.getElementById("playBtn");
+  const music = document.getElementById("music");
+
+  btn.onclick = () => {
+    music.play();
+    btn.style.display = "none";
+  };
+
+  // Corazones con lazos
+  function crearCorazon() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "🎀❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (5 + Math.random() * 4) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 9000);
+  }
+
+  setInterval(crearCorazon, 450);
+</script>
 
 </body>
 </html>
