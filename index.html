@@ -1,132 +1,136 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Para ti ❤️</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz 14 💖</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #ffe6ee, #ffd1e3);
-      overflow-x: hidden;
-      animation: fadeIn 2s ease;
-    }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ff4d6d, #7b2cbf);
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+  animation: fadeIn 1.5s ease;
+}
 
-    .container {
-      max-width: 900px;
-      margin: 60px auto;
-      background: #fff0f5;
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-    }
+/* Animación entrada */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-    h1 {
-      text-align: center;
-      color: #d6336c;
-      margin-bottom: 30px;
-    }
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: rgba(0,0,0,0.45);
+  border-radius: 20px;
+  color: white;
+  line-height: 1.7;
+  font-size: 18px;
+}
 
-    p {
-      font-size: 18px;
-      line-height: 1.8;
-      color: #333;
-      white-space: pre-line;
-    }
+/* Botón música */
+.music-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  background: #ff85a1;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255,133,161,.7);
+}
 
-    .firma {
-      margin-top: 40px;
-      font-weight: bold;
-      text-align: right;
-    }
+/* Corazones */
+.heart {
+  position: fixed;
+  bottom: -50px;
+  font-size: 28px;
+  animation: floatUp linear infinite;
+  opacity: 0.8;
+}
 
-    /* Botón música */
-    #playBtn {
-      position: fixed;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #ff5fa2;
-      color: white;
-      border: none;
-      padding: 12px 22px;
-      font-size: 16px;
-      border-radius: 30px;
-      z-index: 9999;
-    }
-
-    /* Corazones con lazos */
-    .heart {
-      position: fixed;
-      top: -20px;
-      font-size: 24px;
-      animation: fall linear forwards;
-      opacity: 0.8;
-      pointer-events: none;
-    }
-
-    @keyframes fall {
-      to {
-        transform: translateY(110vh) rotate(360deg);
-      }
-    }
-  </style>
+@keyframes floatUp {
+  from {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+</style>
 </head>
 
 <body>
 
-<button id="playBtn">💗 Toca aquí, mi niña 💗</button>
-
-<audio id="music" loop>
-  <source src="sweet.mp3" type="audio/mpeg">
-</audio>
+<button class="music-btn" onclick="playMusic()">💖 Tocar música</button>
 
 <div class="container">
-  <h1>Para ti, mi niña 💖</h1>
+<p>
+ola mi niña solo quería que supieras lo mucho que te amo mi vida y que eres alguien muy especial en mi vida, alguien en el que pienso desde que me levanto, hasta que me acuesto. Realmente no se que me hiciste mi amor pero me gusta, me gusta pensar en ti, en pensar que haces o pensar en lo mucho que te amo, no sabia que necesitaba de ti hasta que llegaste mi niña, creo que me estoy yendo de tema pero esta quería que fuese algo distinta, quizás más yo? o no se mi amor, pero lo que si se amor es que te amo mucho y que ojala pasemos un lindo 14 mi monita, el primero de muchos que vamos a pasar juntos y ojalá el próximo lo podamos pasar estando juntos haciendo muchas cosas juntos, siendo solo tu y yo, siendo felices que creo que es lo que más queremos ambos mi vida.
+</p>
 
-  <p>
-ola mi niña solo quería que supieras lo mucho que te amo mi vida y que eres alguien muy especial en mi vida, alguien en el que pienso desde que me levanto, hasta que me acuesto. Realmente no se que me hiciste mi amor pero me gusta, me gusta pensar en ti, en pensar que haces o pensar en lo mucho que te amo, no sabia que necesitaba de ti hasta que llegaste mi niña, creo que me estoy yendo de tema pero esta quería que fuese algo distinta, quizás más yo? o no se mi amor, pero lo que si se amor es que te amo mucho y que ojala pasemos un lindo 14 mi monita, el primero de muchos que vamos a pasar juntos y ojalá el próximo lo podamos pasar estando juntos haciendo muchas cosas juntos, siendo solo tu y yo, siendo felices que creo que es lo que más queremos ambos mi vida. Te amo mucho mi monita, mi cachetoncita anhelo que llegue diciembre solo para poder verte, y ver los ojos del amor de mi vida, los ojos que que quiero ver al levantarme todas las mañana.
+<p>
+Te amo mucho mi monita, mi cachetoncita anhelo que llegue diciembre solo para poder verte, y ver los ojos del amor de mi vida, los ojos que quiero ver al levantarme todas las mañana.
+</p>
 
-Pero realmente quiero que estos meses pasen lento y a la vez no mi amor, solo por el hecho de que quiero vivir cada momento junto a ti y que cada momento sea único y recordarlo siempre mi niña :3. Te amo mucho mi niña hermosa, mi cachetona, mi monita. Mi enojona la uníca enojona que quiero tener siempre en mi vida.
+<p>
+Pero realmente quiero que estos meses pasen lento y a la vez no mi amor, solo por el hecho de que quiero vivir cada momento junto a ti y que cada momento sea único y recordarlo siempre mi niña :3.
+</p>
 
-Feliz 14 mi bebé, el primero de muchos que vamos a pasar, y a pesar de la distancia mi vida va a ser un gran día tenlo x seguro espero te guste esta carta, intente que fuera un poco diferente. Algún día podré darte cartas echas a mano, y no creo que falte mucho para eso, pero bueño mi vida te amo mucho. Firma?
-  </p>
+<p>
+Te amo mucho mi niña hermosa, mi cachetona, mi monita. Mi enojona la única enojona que quiero tener siempre en mi vida.
+</p>
 
-  <p class="firma">
-    Tu niño &lt;3
-  </p>
+<p>
+<b>Feliz 14 mi bebé</b>, el primero de muchos que vamos a pasar, y a pesar de la distancia mi vida va a ser un gran día tenlo x seguro espero te guste esta carta, intente que fuera un poco diferente.
+</p>
+
+<p>
+Algún día podré darte cartas hechas a mano, y no creo que falte mucho para eso.
+</p>
+
+<p>
+<b>Firma:</b><br>
+Tu niño &lt;3
+</p>
 </div>
 
+<audio id="music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
 <script>
-  // Música (necesita toque en celular)
-  const btn = document.getElementById("playBtn");
-  const music = document.getElementById("music");
+function playMusic() {
+  const audio = document.getElementById("music");
+  audio.play();
+}
 
-  btn.onclick = () => {
-    music.play();
-    btn.style.display = "none";
-  };
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "🎀💖";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+  document.body.appendChild(heart);
 
-  // Corazones con lazos
-  function crearCorazon() {
-    const heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerHTML = "🎀❤️";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = (5 + Math.random() * 4) + "s";
-    document.body.appendChild(heart);
+  setTimeout(() => {
+    heart.remove();
+  }, 10000);
+}
 
-    setTimeout(() => heart.remove(), 9000);
-  }
-
-  setInterval(crearCorazon, 450);
+setInterval(createHeart, 600);
 </script>
 
 </body>
