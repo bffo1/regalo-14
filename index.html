@@ -13,13 +13,35 @@
 
 body{
   margin:0;
-  min-height:100vh;
   background: linear-gradient(180deg, #fde2e4, #fadadd);
   display:flex;
   justify-content:center;
   align-items:center;
-  overflow:hidden;
 }
+<button id="playBtn">💗 Toca aquí, mi niña 💗</button>
+
+<audio id="music" loop>
+  <source src="sweet.mp3" type="audio/mpeg">
+</audio>
+
+<style>
+  #playBtn {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 16px;
+    background: #ff5fa2;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    z-index: 9999;
+  }
+</style>
+
+<script>
+  const btn = d
 
 /* ====== PARTICULAS ====== */
 .particles span{
@@ -177,3 +199,4 @@ setInterval(createParticle, 400);
 
 </body>
 </html>
+
