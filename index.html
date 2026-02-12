@@ -8,32 +8,32 @@
   <style>
     body {
       margin: 0;
-      padding: 20px;
+      padding: 25px;
       font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #ffe6f0, #fff);
-      overflow-y: auto;
-    }
-
-    .texto {
-      max-width: 600px;
-      margin: auto;
-      font-size: 18px;
-      line-height: 1.6;
+      background: #ffe6f0;
       color: #333;
     }
 
+    .card {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.1);
+      line-height: 1.6;
+      font-size: 18px;
+    }
+
     #playBtn {
-      position: fixed;
-      top: 15px;
-      left: 50%;
-      transform: translateX(-50%);
+      display: block;
+      margin: 0 auto 20px;
       padding: 12px 20px;
       font-size: 16px;
       background: #ff5fa2;
       color: white;
       border: none;
-      border-radius: 20px;
-      z-index: 9999;
+      border-radius: 25px;
     }
   </style>
 </head>
@@ -46,13 +46,17 @@
   <source src="sweet.mp3" type="audio/mpeg">
 </audio>
 
-<div class="texto">
+<div class="card">
   <p>
-  ola mi niña solo quería que supieras lo mucho que te amo mi vida y que eres alguien muy especial en mi vida, alguien en el que pienso desde que me levanto, hasta que me acuesto...
+  ola mi niña solo quería que supieras lo mucho que te amo mi vida y que eres alguien muy especial en mi vida, alguien en el que pienso desde que me levanto, hasta que me acuesto.
   </p>
 
   <p>
-  Feliz 14 mi bebé, el primero de muchos que vamos a pasar, y a pesar de la distancia mi vida va a ser un gran día tenlo x seguro espero te guste esta carta.
+  Realmente no se que me hiciste mi amor pero me gusta, me gusta pensar en ti, en lo mucho que te amo y en todo lo que vamos a vivir juntos.
+  </p>
+
+  <p>
+  Feliz 14 mi bebé, el primero de muchos que vamos a pasar, y a pesar de la distancia mi vida va a ser un gran día, tenlo x seguro.
   </p>
 
   <p><strong>Tu niño &lt;3</strong></p>
@@ -62,10 +66,10 @@
   const btn = document.getElementById("playBtn");
   const music = document.getElementById("music");
 
-  btn.addEventListener("click", () => {
+  btn.onclick = () => {
     music.play();
     btn.style.display = "none";
-  });
+  };
 </script>
 
 </body>
